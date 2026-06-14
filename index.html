@@ -22,7 +22,7 @@
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            padding-bottom: 10px; /* Espaço para o botão inferior */
+            padding-bottom: 10px;
         }
 
         /* CABEÇALHO (Fundo Laranja, Letra Preta) */
@@ -42,11 +42,11 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-around; /* Distribui os jogos verticalmente */
+            justify-content: space-around;
             height: 100%;
         }
 
-        /* O JOGO (Estilo Placar de TV) */
+        /* O JOGO */
         .jogo {
             display: flex;
             justify-content: center;
@@ -60,7 +60,7 @@
             border-bottom: none;
         }
 
-        /* Colunas dos Países (Lado Esquerdo e Direito) */
+        /* Colunas dos Países */
         .coluna-pais {
             display: flex;
             flex-direction: column;
@@ -84,7 +84,7 @@
             box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Centro do Placar: X e Horário */
+        /* Centro do Placar */
         .coluna-centro {
             width: 20%;
             text-align: center;
@@ -108,7 +108,7 @@
             margin-top: 5px;
         }
 
-        /* BOTÃO INFERIOR (Navegação Próximo Dia) */
+        /* BOTÃO INFERIOR */
         .rodape {
             text-align: center;
             padding: 5px 0;
@@ -125,10 +125,6 @@
             border-radius: 6px;
             border: 2px solid #000000;
         }
-        .btn-proximo:active {
-            background-color: #ff9900;
-            color: #000000;
-        }
     </style>
 </head>
 <body>
@@ -144,7 +140,7 @@
         <!-- JOGO 1 -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/de.png" alt="Alemanha">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/160px-Flag_of_Germany.svg.png" alt="Alemanha">
                 <div class="nome-pais">Alemanha</div>
             </div>
             <div class="coluna-centro">
@@ -152,7 +148,7 @@
                 <div class="hora-jogo">14:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/cw.png" alt="Curaçau">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Cura%C3%A7ao.svg/160px-Flag_of_Cura%C3%A7ao.svg.png" alt="Curaçau">
                 <div class="nome-pais">Curaçau</div>
             </div>
         </div>
@@ -160,7 +156,7 @@
         <!-- JOGO 2 -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/nl.png" alt="Holanda">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/160px-Flag_of_the_Netherlands.svg.png" alt="Holanda">
                 <div class="nome-pais">Holanda</div>
             </div>
             <div class="coluna-centro">
@@ -168,7 +164,7 @@
                 <div class="hora-jogo">17:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/jp.png" alt="Japão">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/160px-Flag_of_Japan.svg.png" alt="Japão">
                 <div class="nome-pais">Japão</div>
             </div>
         </div>
@@ -176,7 +172,7 @@
         <!-- JOGO 3 -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/ci.png" alt="Costa do Marfim">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/160px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png" alt="Costa do Marfim">
                 <div class="nome-pais">C. Marfim</div>
             </div>
             <div class="coluna-centro">
@@ -184,7 +180,7 @@
                 <div class="hora-jogo">20:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/ec.png" alt="Equador">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/160px-Flag_of_Ecuador.svg.png" alt="Equador">
                 <div class="nome-pais">Equador</div>
             </div>
         </div>
@@ -192,7 +188,7 @@
         <!-- JOGO 4 -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/se.png" alt="Suécia">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/160px-Flag_of_Sweden.svg.png" alt="Suécia">
                 <div class="nome-pais">Suécia</div>
             </div>
             <div class="coluna-centro">
@@ -200,14 +196,14 @@
                 <div class="hora-jogo">23:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="https://flagcdn.com/w160/tn.png" alt="Tunísia">
+                <img class="bandeira" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/160px-Flag_of_Tunisia.svg.png" alt="Tunísia">
                 <div class="nome-pais">Tunísia</div>
             </div>
         </div>
 
     </div>
 
-    <!-- Botão para o Próximo Dia -->
+    <!-- Botão para Segunda-feira -->
     <div class="rodape">
         <a href="15-06.html" class="btn-proximo">Ver Jogos de Segunda ➔</a>
     </div>
