@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa 2026 - Quarta (17/06)</title>
+    <style>
+        /* Bloqueia o scroll para travar a tela no iPad 2 */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-bottom: 10px;
+        }
+
+        /* CABEÇALHO */
+        .header {
+            background-color: #ff9900;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* CONTAINER DOS JOGOS */
+        .conteudo {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        /* O JOGO */
+        .jogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 22%;
+            border-bottom: 2px dashed #e6e6e6;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .jogo:last-child {
+            border-bottom: none;
+        }
+
+        /* Identificador de Grupo */
+        .grupo-tag {
+            position: absolute;
+            top: 2px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #888888;
+            text-transform: uppercase;
+        }
+
+        /* Colunas dos Países */
+        .coluna-pais {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            text-align: center;
+        }
+
+        .nome-pais {
+            font-size: 2.1em;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #000000;
+        }
+
+        .bandeira {
+            width: 110px;
+            height: 73px;
+            object-fit: cover;
+            border: 2px solid #000000;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Centro do Placar */
+        .coluna-centro {
+            width: 20%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .x-separador {
+            font-size: 2.3em;
+            font-weight: bold;
+            color: #999999;
+            line-height: 1;
+        }
+
+        .hora-jogo {
+            font-size: 2.1em;
+            font-weight: 900;
+            color: #ff5500;
+            margin-top: 5px;
+        }
+
+        /* BOTÕES INFERIORES */
+        .rodape {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 5px 0;
+        }
+
+        .btn-navegacao {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 6px;
+            border: 2px solid #000000;
+        }
+        .btn-navegacao:active {
+            background-color: #ff9900;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <div class="header">
+        QUARTA, 17 DE JUNHO
+    </div>
+
+    <!-- Lista de Jogos -->
+    <div class="conteudo">
+        
+        <!-- JOGO 1: PORTUGAL X RD CONGO -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo K</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/pt.png" alt="Portugal">
+                <div class="nome-pais">Portugal</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">14:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/cd.png" alt="RD Congo">
+                <div class="nome-pais">RD Congo</div>
+            </div>
+        </div>
+
+        <!-- JOGO 2: INGLATERRA X CROÁCIA -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo L</div>
+            <div class="coluna-pais">
+                <!-- Ajuste o nome do arquivo se a sua bandeira da Inglaterra estiver diferente -->
+                <img class="bandeira" src="bandeiras/gb-eng.png" alt="Inglaterra">
+                <div class="nome-pais">Inglaterra</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">17:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/hr.png" alt="Croácia">
+                <div class="nome-pais">Croácia</div>
+            </div>
+        </div>
+
+        <!-- JOGO 3: GANA X PANAMÁ -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo L</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/gh.png" alt="Gana">
+                <div class="nome-pais">Gana</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">20:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/pa.png" alt="Panamá">
+                <div class="nome-pais">Panamá</div>
+            </div>
+        </div>
+
+        <!-- JOGO 4: UZBEQUISTÃO X COLÔMBIA -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo K</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/uz.png" alt="Uzbequistão">
+                <div class="nome-pais">Uzbequistão</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">23:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/co.png" alt="Colômbia">
+                <div class="nome-pais">Colômbia</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Botões de Navegação -->
+    <div class="rodape">
+        <a href="16-06.html" class="btn-navegacao">◀ Voltar para Terça</a>
+        <a href="18-06.html" class="btn-navegacao">Jogos de Quinta ▶</a>
+    </div>
+
+</body>
+</html>
