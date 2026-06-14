@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copa 2026 - Quarta (24/06)</title>
     <style>
-        /* Bloqueia o scroll para travar a tela no iPad 2 */
+        /* Permite apenas o scroll vertical se houver necessidade pelo espaço físico */
         html, body {
             height: 100%;
             margin: 0;
@@ -14,7 +14,8 @@
             background-color: #ffffff;
             color: #000000;
             font-family: Arial, Helvetica, sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
         
         body {
@@ -22,102 +23,87 @@
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
 
         /* CABEÇALHO */
         .header {
             background-color: #ff9900;
             color: #000000;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        /* CONTAINER DOS JOGOS (Usando estrutura de tabela estável para o iPad 2) */
+        /* CONTAINER DOS JOGOS (Lista única vertical) */
         .conteudo {
             flex-grow: 1;
-            display: table;
-            width: 100%;
-            height: 100%;
-            border-collapse: collapse;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
 
-        .linha-horario {
-            display: table-row;
-            height: 33.33%;
-        }
-
-        /* O JOGO */
+        /* O JOGO (Compactado para caber mais linhas) */
         .jogo {
-            display: table-cell;
-            width: 50%;
-            text-align: center;
-            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 14%; /* Altura reduzida para acomodar as 6 linhas */
             border-bottom: 2px dashed #e6e6e6;
             box-sizing: border-box;
             position: relative;
-            padding: 10px 0;
+            padding: 4px 0;
         }
-        
-        /* Divisória vertical entre jogos do mesmo horário */
-        .jogo:first-child {
-            border-right: 2px dashed #e6e6e6;
-        }
-
-        .linha-horario:last-child .jogo {
+        .jogo:last-child {
             border-bottom: none;
         }
 
         /* Identificador de Grupo */
         .grupo-tag {
             position: absolute;
-            top: 2px;
-            left: 0;
-            right: 0;
-            font-size: 0.85em;
+            top: 1px;
+            font-size: 0.8em;
             font-weight: bold;
             color: #888888;
             text-transform: uppercase;
         }
 
-        /* Estrutura interna do confronto */
-        .confronto-container {
-            display: table;
-            width: 100%;
-        }
-
-        /* Colunas dos Países e Centro */
+        /* Colunas dos Países (Zoom reduzido) */
         .coluna-pais {
-            display: table-cell;
-            width: 42%;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        .coluna-centro {
-            display: table-cell;
-            width: 16%;
-            vertical-align: middle;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
             text-align: center;
         }
 
         .nome-pais {
-            font-size: 1.6em;
+            font-size: 1.6em; /* Texto menor */
             font-weight: bold;
-            margin-top: 5px;
+            margin-top: 4px;
             color: #000000;
         }
 
         .bandeira {
-            width: 85px;
-            height: 57px;
+            width: 75px;  /* Tamanho reduzido */
+            height: 50px; /* Tamanho reduzido */
             object-fit: cover;
             border: 2px solid #000000;
             box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Centro do Placar */
+        .coluna-centro {
+            width: 20%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .x-separador {
@@ -131,7 +117,7 @@
             font-size: 1.6em;
             font-weight: 900;
             color: #ff5500;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         /* BOTÕES INFERIORES */
@@ -147,8 +133,8 @@
             background-color: #000000;
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 20px;
-            font-size: 1.2em;
+            padding: 10px 18px;
+            font-size: 1.1em;
             font-weight: bold;
             border-radius: 6px;
             border: 2px solid #000000;
@@ -167,87 +153,108 @@
 
     <div class="conteudo">
         
-        <div class="linha-horario">
-            <div class="jogo">
-                <div class="grupo-tag">Grupo B</div>
-                <div class="confronto-container">
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/ch.png" alt="Suíça">
-                        <div class="nome-pais">Suíça</div>
-                    </div>
-                    <div class="coluna-centro">
-                        <div class="x-separador">X</div>
-                        <div class="hora-jogo">16:00</div>
-                    </div>
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/ca.png" alt="Canadá">
-                        <div class="nome-pais">Canadá</div>
-                    </div>
-                </div>
+        <div class="jogo">
+            <div class="grupo-tag">Grupo B</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ch.png" alt="Suíça">
+                <div class="nome-pais">Suíça</div>
             </div>
-
-            <div class="jogo">
-                <div class="grupo-tag">Grupo B</div>
-                <div class="confronto-container">
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/ba.png" alt="Bósnia">
-                        <div class="nome-pais">Bósnia</div>
-                    </div>
-                    <div class="coluna-centro">
-                        <div class="x-separador">X</div>
-                        <div class="hora-jogo">16:00</div>
-                    </div>
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/qa.png" alt="Catar">
-                        <div class="nome-pais">Catar</div>
-                    </div>
-                </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">16:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ca.png" alt="Canadá">
+                <div class="nome-pais">Canadá</div>
             </div>
         </div>
 
-        <div class="linha-horario">
-            <div class="jogo">
-                <div class="grupo-tag">Grupo C</div>
-                <div class="confronto-container">
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/ma.png" alt="Marrocos">
-                        <div class="nome-pais">Marrocos</div>
-                    </div>
-                    <div class="coluna-centro">
-                        <div class="x-separador">X</div>
-                        <div class="hora-jogo">19:00</div>
-                    </div>
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/ht.png" alt="Haiti">
-                        <div class="nome-pais">Haiti</div>
-                    </div>
-                </div>
+        <div class="jogo">
+            <div class="grupo-tag">Grupo B</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ba.png" alt="Bósnia">
+                <div class="nome-pais">Bósnia</div>
             </div>
-
-            <div class="jogo">
-                <div class="grupo-tag">Grupo C</div>
-                <div class="confronto-container">
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/gb-sct.png" alt="Escócia">
-                        <div class="nome-pais">Escócia</div>
-                    </div>
-                    <div class="coluna-centro">
-                        <div class="x-separador">X</div>
-                        <div class="hora-jogo">19:00</div>
-                    </div>
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/br.png" alt="Brasil">
-                        <div class="nome-pais">Brasil</div>
-                    </div>
-                </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">16:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/qa.png" alt="Catar">
+                <div class="nome-pais">Catar</div>
             </div>
         </div>
 
-        <div class="linha-horario">
-            <div class="jogo">
-                <div class="grupo-tag">Grupo A</div>
-                <div class="confronto-container">
-                    <div class="coluna-pais">
-                        <img class="bandeira" src="bandeiras/za.png" alt="África do Sul">
-                        <div class="nome-pais">África S.</div>
-                    </div>
+        <div class="jogo">
+            <div class="grupo-tag">Grupo C</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ma.png" alt="Marrocos">
+                <div class="nome-pais">Marrocos</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">19:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ht.png" alt="Haiti">
+                <div class="nome-pais">Haiti</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="grupo-tag">Grupo C</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/gb-sct.png" alt="Escócia">
+                <div class="nome-pais">Escócia</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">19:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/br.png" alt="Brasil">
+                <div class="nome-pais">Brasil</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="grupo-tag">Grupo A</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/za.png" alt="África do Sul">
+                <div class="nome-pais">África S.</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">22:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/kr.png" alt="Coreia do Sul">
+                <div class="nome-pais">Coreia S.</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="grupo-tag">Grupo A</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/cz.png" alt="Tchéquia">
+                <div class="nome-pais">Tchéquia</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">22:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/mx.png" alt="México">
+                <div class="nome-pais">México</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        <a href="23-06.html" class="btn-navegacao">◀ Voltar para Terça</a>
+        <a href="25-06.html" class="btn-navegacao">Jogos de Quinta ▶</a>
+    </div>
+
+</body>
+</html>
