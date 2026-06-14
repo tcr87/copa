@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copa 2026 - Domingo (14/06)</title>
     <style>
+        /* Bloqueia o scroll para travar a tela no iPad 2 */
         html, body {
             height: 100%;
             margin: 0;
@@ -15,6 +16,7 @@
             font-family: Arial, Helvetica, sans-serif;
             overflow: hidden;
         }
+        
         body {
             display: flex;
             flex-direction: column;
@@ -22,6 +24,8 @@
             box-sizing: border-box;
             padding-bottom: 10px;
         }
+
+        /* CABEÇALHO (Fundo Laranja, Letra Preta) */
         .header {
             background-color: #ff9900;
             color: #000000;
@@ -32,6 +36,8 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
+
+        /* CONTAINER DOS JOGOS */
         .conteudo {
             flex-grow: 1;
             display: flex;
@@ -39,6 +45,8 @@
             justify-content: space-around;
             height: 100%;
         }
+
+        /* O JOGO (Estilo Placar de TV) */
         .jogo {
             display: flex;
             justify-content: center;
@@ -51,6 +59,8 @@
         .jogo:last-child {
             border-bottom: none;
         }
+
+        /* Colunas dos Países (Lado Esquerdo e Direito) */
         .coluna-pais {
             display: flex;
             flex-direction: column;
@@ -58,12 +68,14 @@
             width: 40%;
             text-align: center;
         }
+
         .nome-pais {
             font-size: 2.1em;
             font-weight: bold;
             margin-top: 8px;
             color: #000000;
         }
+
         .bandeira {
             width: 110px;
             height: 73px;
@@ -71,6 +83,8 @@
             border: 2px solid #000000;
             box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
         }
+
+        /* Centro do Placar: X e Horário */
         .coluna-centro {
             width: 20%;
             text-align: center;
@@ -79,22 +93,27 @@
             justify-content: center;
             align-items: center;
         }
+
         .x-separador {
             font-size: 2.3em;
             font-weight: bold;
             color: #999999;
             line-height: 1;
         }
+
         .hora-jogo {
             font-size: 2.1em;
             font-weight: 900;
             color: #ff5500;
             margin-top: 5px;
         }
+
+        /* BOTÃO INFERIOR (Navegação Próximo Dia) */
         .rodape {
             text-align: center;
             padding: 5px 0;
         }
+
         .btn-proximo {
             display: inline-block;
             background-color: #000000;
@@ -106,6 +125,10 @@
             border-radius: 6px;
             border: 2px solid #000000;
         }
+        .btn-proximo:active {
+            background-color: #ff9900;
+            color: #000000;
+        }
     </style>
 </head>
 <body>
@@ -116,10 +139,9 @@
 
     <div class="conteudo">
         
-        <!-- JOGO 1: ALEMANHA X CURAÇAU -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAnFBMVEUAAAD/AAn/AAX/AAT///////85OTmsrKzMzMxERETo6OhcXFwYGBgQEBDY2Nj4+Pg4ODjAwMDw8PCgoKCYmJjw8PAQEBC4uLj09PT8/PwICAgwMDCwsLCYmJiIiIiwv7C4wLiQsJCgoKC4yLjQ0NCguKCAsIAgICAgICDw8PCYmJh4eHhISEhYWFjY2Njo6OgwMDDw8PD8/PgYGBg4ODis0y0oAAAAAnRSTlMAgPC7v8wAABAnSURBVFjHY2AYfGDUMGrcgYwSg9gY7A9kZBhUfGBmYBjVf3itL8gwdv7gZ2Bk+MDMwMCo9wO86EAGBgYGBp0fMDVfGIH6f8AwavzAYv8BIwMDo+4PnOo/jEAGI9T6Bwyj+g8wD6g/wMTI+AEpMv4DhlH9RxgYGLUfMDKg1f8Dhg/M6EED6Gv6Bwyj9R9Ghv/YfMAwWv9hwGkAYvVpYBgdf7AzMPwDcoD6mX8wMvynfGAYgA99wKj9A8Y0H5gZGPQY/kP8wwB86B8wjNo/YIwZGRgZfvAw/Of+wTAA6R8wGv4Dfe0DA8N/xv8M/+H6gRz9H5gZGFT+A/3C8B/uDwYgNf4hH4A8gN7XID4D9AFgYGT8D7UfkKofID6D0fAf6Gv/f7g9gI9/wDCo/sDEyIDVA7h6gE+wB5gYfvz7D/E1w39gBwOfwFf9g97XQP0Mv6EODHwCn8BX/f8Pt2fA3jAgF/r/H+R/oNoDuM9+fvgPtweYwWz4T3f1D8IeIIdgGgP/PzIAGf8xMvz7DwygK37K8gA+gTf8gYFhDP7fP2AY9f9B7X+w2v/QWwD0wQ8YRv1/gPsA6G0DoH/vN6L9A9b/D7MfkLbf8I7eDKpA6hgwB6DNP6D7DwNG7b8v0PofgDYYv8C0HxiB1DH8hwGj9gMYfv4EajMxgO34+wW9/re7oA7+9QXy/1+wOn7C4QekB6wN9MUPfO/9+v0Hcv9f6Gs+IPf/hfcGvscfEAz0/j/A5z4fUP99/gXqg1Dof1C6/wu2YfL7L9h/yE+w9yBvfsAwaP7F6F/I779A9/4C+w+UBlG7f/0CffTfLwbyP1Aaf9Dbe6XfP+H+A5v+7/f3D8iZf+H+gyv8AdM36N/3O8gPQLv+fIE9/ffr9x/I/b++vPl6C7T9B2yYPP//AasD+hOEB1F3/f8Lsvk/mP7D9P8HauOPn7/+vPn9B1jXbxgG7P+gD0N++vkLcoao3d++ff9w+/fPl99vf/768/0bROcPlP/I8wN6B0jDf6FmgDoAtH4HcoL6G6R9v7//+/3f969fv79Bfvl5E9rL+H4Hafn7/dsPaOvv75+/fv0Guvf97e/fv7+AXfX39/fPP7///Pn969dNsN9fIGu/IPr//vnz/efPt7+/vn3/8w/i368/f379+vnz+dfPn7++vXn9Gtr/B4v7wNf+C+w4uJd//vr+8/sPaA9//frz89efv39/fXv9Eu7Xm0D+Axb8+vbt69ffQLXfv3379evnzz8fXv8COerX699vXv/+9ff367fv3z5fB3EGuG/99gO2fvv6C/Lp759vv97C6oEv37+AnPn996+vX7++ff/68R60/88fyH+//v79B7n/y5df33//fvv+/ceP759///p2/frXr99ffkFr9v0Gs/3Hj+9fv74gZf/89fvvb19+fP/+69u3b19fvP79/uLli9evX79+/fr127dv3759+wVywq9fv3/9+fXr79//EIPev3///vsLWDXwE7A4mD/Avf7t++9vv/7++vXtN5Am375///b67fXr169///79+++fX9++/fr9+/efP3/+BHz86w9kEJD67++v7x8fv38AuvfnDwT6C6L5+wccMv/++AEP+eMHEOq3v3++fHwAtPvjIxzqD0gB6N8Pn4AGg6z69wGg8e8f8JD4/u0DUvS3N69fv3nz+u3Xp6+fPn7++uPHtx/vn7/+A/kK9uDfv/A9wK5BvHz89vjx+4ffQPPAn/g36E39/vn8+cf3H0AGvPn1/fM/IE1/AnH459v7V69f//j++fPt86dP3wBNgVz999ebN2/fvX379evXjx+/vn399evHtx/vX79//g4ZCrD5D5BwILtAc/3x49fPn5+BNoE3b6Bf//mCXPzn26dP3wDtAcoArwB//Hj9+vX7p09A9D9+/fT+/eePHz++/Pry+esvSDb/fvXq9evXr9+9ffv6/evbV18AnL9+BfoA/I5A7v3+A+4DoKnAG8Abf/x49frPl09fgOQAbv8G3vzx49uXL18Avf/4D/T5y+evv399+QGkIlgvEM2gP79+/f797dfvXwEGv7p8BXHw18dPHz/CxYCOf//z9ccPn6CO//H+/devb7+A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" alt="Alemanha">
+                <img class="bandeira" src="bandeiras/de.png" alt="Alemanha">
                 <div class="nome-pais">Alemanha</div>
             </div>
             <div class="coluna-centro">
@@ -127,15 +149,14 @@
                 <div class="hora-jogo">14:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAgf//////gwD//wD/AQC7v8C/wMDAwMD///+/wMC7v8DAwMB/gIC/wMD///9/gID///+7v8DAwMD//wDu7u67v8BAQEBAQEDu7u6AgIB/gID///9AQEB/gIDu7u7u7u67v8BAQEBAQED///9/gIC7v8DAwMDAwMB/gIAfWf7zAAAAAnRSTlMAgPC7v8wAAAA/SURBVFjH7cExAQAAAMKg9U9tDB86gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwNTeAAAfYg9mQAAAAASUVORK5CYII=" alt="Curaçau">
+                <img class="bandeira" src="bandeiras/cw.png" alt="Curaçau">
                 <div class="nome-pais">Curaçau</div>
             </div>
         </div>
 
-        <!-- JOGO 2: HOLANDA X JAPÃO -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAAAD////u7u7MzMx/gIDAwMDu7u6ZmZm7v8BAQEBcXFzMzMx/gICAgID///9/gIDAwMD////u7u7///+7v8D///+7v8C7v8C7v8CAgID///+AgIC7v8DMzMxAQEDu7u6AgIC7v8DAwMDAwMC7v8DAwMDu7u67v8DAt3FMAAAAAnRSTlMAgPC7v8wAAAA9SURBVFjH7cExAQAAAMKg9U9tDB86gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwNTeAAAfYg9mQAAAAASUVORK5CYII=" alt="Holanda">
+                <img class="bandeira" src="bandeiras/nl.png" alt="Holanda">
                 <div class="nome-pais">Holanda</div>
             </div>
             <div class="coluna-centro">
@@ -143,15 +164,14 @@
                 <div class="hora-jogo">17:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAAAD///+AgIDMzMxERETAwMDu7u7///+7v8C7v8CAgIC7v8D////u7u67v8DAwMD///+AgICAgID///+AgID///9/gID////u7u6AgID///+AgID///+AgID///9/gID///9/gID///+7v8D///+7v8BAQED///9b69wOAAAAAnRSTlMAgPC7v8wAAABQSURBVFjH7cGBAAAAAAMg+6c2hoNTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8GZ0AAH/6zZpAAAAAElFTkSuQmCC" alt="Japão">
+                <img class="bandeira" src="bandeiras/jp.png" alt="Japão">
                 <div class="nome-pais">Japão</div>
             </div>
         </div>
 
-        <!-- JOGO 3: COSTA DO MARFIM X EQUADOR -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAgf//////gwD//wD/AQC7v8C/wMDAwMD///+/wMC7v8DAwMB/gIC/wMD///9/gID///+7v8DAwMD//wDu7u67v8BAQEBAQEDu7u6AgIB/gID///9AQEB/gIDu7u7u7u67v8BAQEBAQED///9/gIC7v8DAwMDAwMB/gIAfWf7zAAAAAnRSTlMAgPC7v8wAAAA/SURBVFjH7cExAQAAAMKg9U9tDB86gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwNTeAAAfYg9mQAAAAASUVORK5CYII=" alt="Costa do Marfim">
+                <img class="bandeira" src="bandeiras/ci.png" alt="Costa do Marfim">
                 <div class="nome-pais">C. Marfim</div>
             </div>
             <div class="coluna-centro">
@@ -159,15 +179,14 @@
                 <div class="hora-jogo">20:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAAAD////u7u7MzMx/gIDAwMDu7u6ZmZm7v8BAQEBcXFzMzMx/gICAgID///9/gIDAwMD////u7u7///+7v8D///+7v8C7v8C7v8CAgID///+AgIC7v8DMzMxAQEDu7u6AgIC7v8DAwMDAwMC7v8DAwMDu7u67v8DAt3FMAAAAAnRSTlMAgPC7v8wAAAA9SURBVFjH7cExAQAAAMKg9U9tDB86gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwNTeAAAfYg9mQAAAAASUVORK5CYII=" alt="Equador">
+                <img class="bandeira" src="bandeiras/ec.png" alt="Equador">
                 <div class="nome-pais">Equador</div>
             </div>
         </div>
 
-        <!-- JOGO 4: SUÉCIA X TUNÍSIA -->
         <div class="jogo">
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAAAD///+AgIDMzMxERETAwMDu7u7///+7v8C7v8CAgIC7v8D////u7u67v8DAwMD///+AgICAgID///+AgID///9/gID////u7u6AgID///+AgID///+AgID///9/gID///9/gID///+7v8D///+7v8BAQED///9b69wOAAAAAnRSTlMAgPC7v8wAAABQSURBVFjH7cGBAAAAAAMg+6c2hoNTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8GZ0AAH/6zZpAAAAAElFTkSuQmCC" alt="Suécia">
+                <img class="bandeira" src="bandeiras/se.png" alt="Suécia">
                 <div class="nome-pais">Suécia</div>
             </div>
             <div class="coluna-centro">
@@ -175,7 +194,7 @@
                 <div class="hora-jogo">23:00</div>
             </div>
             <div class="coluna-pais">
-                <img class="bandeira" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC53+KiAAAAe1BMVEUAAAD////u7u7MzMx/gIDAwMDu7u6ZmZm7v8BAQEBcXFzMzMx/gICAgID///9/gIDAwMD////u7u7///+7v8D///+7v8C7v8C7v8CAgID///+AgIC7v8DMzMxAQEDu7u6AgIC7v8DAwMDAwMC7v8DAwMDu7u67v8DAt3FMAAAAAnRSTlMAgPC7v8wAAAA9SURBVFjH7cExAQAAAMKg9U9tDB86gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwNTeAAAfYg9mQAAAAASUVORK5CYII=" alt="Tunísia">
+                <img class="bandeira" src="bandeiras/tn.png" alt="Tunísia">
                 <div class="nome-pais">Tunísia</div>
             </div>
         </div>
