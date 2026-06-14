@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa 2026 - Sexta (26/06)</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-bottom: 5px;
+        }
+
+        .header {
+            background-color: #ff9900;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .conteudo {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .jogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 14%;
+            border-bottom: 2px dashed #e6e6e6;
+            box-sizing: border-box;
+            position: relative;
+            padding: 4px 0;
+        }
+        .jogo:last-child {
+            border-bottom: none;
+        }
+
+        .grupo-tag {
+            position: absolute;
+            top: 1px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: #888888;
+            text-transform: uppercase;
+        }
+
+        .coluna-pais {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            text-align: center;
+        }
+
+        .nome-pais {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-top: 4px;
+            color: #000000;
+        }
+
+        .bandeira {
+            width: 75px;
+            height: 50px;
+            object-fit: cover;
+            border: 2px solid #000000;
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
+        }
+
+        .coluna-centro {
+            width: 20%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .x-separador {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #999999;
+            line-height: 1;
+        }
+
+        .hora-jogo {
+            font-size: 1.6em;
+            font-weight: 900;
+            color: #ff5500;
+            margin-top: 2px;
+        }
+
+        .rodape {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 5px 0;
+        }
+
+        .btn-navegacao {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 6px;
+            border: 2px solid #000000;
+        }
+        .btn-navegacao:active {
+            background-color: #ff9900;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        SEXTA, 26 DE JUNHO - 3ª RODADA
+    </div>
+
+    <div class="conteudo">
+        
+        <!-- JOGO 1 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo I</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/no.png" alt="Noruega">
+                <div class="nome-pais">Noruega</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">16:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/fr.png" alt="França">
+                <div class="nome-pais">França</div>
+            </div>
+        </div>
+
+        <!-- JOGO 2 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo I</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/sn.png" alt="Senegal">
+                <div class="nome-pais">Senegal</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">16:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/iq.png" alt="Iraque">
+                <div class="nome-pais">Iraque</div>
+            </div>
+        </div>
+
+        <!-- JOGO 3 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo H</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/cv.png" alt="Cabo Verde">
+                <div class="nome-pais">Cabo V.</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">21:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/sa.png" alt="Arábia Saudita">
+                <div class="nome-pais">Arábia S.</div>
+            </div>
+        </div>
+
+        <!-- JOGO 4 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo H</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/uy.png" alt="Uruguai">
+                <div class="nome-pais">Uruguai</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">21:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/es.png" alt="Espanha">
+                <div class="nome-pais">Espanha</div>
+            </div>
+        </div>
+
+        <!-- JOGO 5 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo G</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/nz.png" alt="Nova Zelândia">
+                <div class="nome-pais">N. Zelândia</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">00:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/be.png" alt="Bélgica">
+                <div class="nome-pais">Bélgica</div>
+            </div>
+        </div>
+
+        <!-- JOGO 6 -->
+        <div class="jogo">
+            <div class="grupo-tag">Grupo G</div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/eg.png" alt="Egito">
+                <div class="nome-pais">Egito</div>
+            </div>
+            <div class="coluna-centro">
+                <div class="x-separador">X</div>
+                <div class="hora-jogo">00:00</div>
+            </div>
+            <div class="coluna-pais">
+                <img class="bandeira" src="bandeiras/ir.png" alt="Irã">
+                <div class="nome-pais">Irã</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        <a href="25-06.html" class="btn-navegacao">◀ Voltar para Quinta</a>
+        <a href="27-06.html" class="btn-navegacao">Jogos de Sábado ▶</a>
+    </div>
+
+</body>
+</html>
