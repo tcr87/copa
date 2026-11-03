@@ -18,16 +18,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            padding: 40px;
+            padding: 20px;
         }
         .card {
             background-color: #FFFFFF;
             border: 1px solid #E1E8ED;
             border-radius: 24px;
-            padding: 60px 40px;
+            padding: 40px 30px;
             width: 100%;
-            max-width: 950px;
-            min-height: 450px;
+            max-width: 600px; /* Largura otimizada para retrato / tela vertical */
+            min-height: 650px; /* Altura generosa para preencher bem a vertical */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -36,37 +36,48 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.06);
         }
         .idioma-tag {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #4A5568;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             background-color: #EDF2F7;
             padding: 6px 16px;
             border-radius: 20px;
         }
         .hangul {
-            font-size: 4.5rem;
+            font-size: 5rem;
             font-weight: 700;
             color: #1A202C;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             line-height: 1.2;
         }
         .romanizacao {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #718096;
             font-weight: 500;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
+        .jamo {
+            font-size: 1.4rem;
+            color: #A0AEC0;
+            font-weight: 500;
+            margin-bottom: 35px;
+            background-color: #F8FAFC;
+            border: 1px dashed #CBD5E0;
+            padding: 8px 18px;
+            border-radius: 12px;
+            letter-spacing: 2px;
+        }
         .traducao {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: #2B6CB0;
             font-weight: 600;
             border-top: 2px solid #E2E8F0;
-            padding-top: 25px;
-            width: 80%;
+            padding-top: 30px;
+            width: 90%;
         }
     </style>
 </head>
@@ -74,27 +85,28 @@
 
     <div class="card">
         <div class="idioma-tag" id="tag-categoria">Coreano • Bloco 1</div>
-        <div class="hangul" id="termo-hangul">안녕하세요</div>
-        <div class="romanizacao" id="termo-romaji">An-nyeong-ha-se-yo</div>
-        <div class="traducao" id="traducao">Olá / Bom dia</div>
+        <div class="hangul" id="termo-hangul">사람</div>
+        <div class="romanizacao" id="termo-romaji">Saram</div>
+        <div class="jamo" id="termo-jamo">ㅅ + ㅏ + ㄹ  |  ㅁ</div>
+        <div class="traducao" id="traducao">Pessoa</div>
     </div>
 
     <script>
-        // SEUS CARDS DA SEMANA: Hangul, Romanização e Tradução
+        // SEUS CARDS DA SEMANA: Hangul, Romanização, Jamo e Tradução
         var cards = [
-            { hangul: "사람", romaji: "Saram", traducao: "Pessoa" },
-            { hangul: "나무", romaji: "Namu", traducao: "Árvore" },
-            { hangul: "물", romaji: "Mul", traducao: "Água" },
-            { hangul: "불", romaji: "Bul", traducao: "Fogo" },
-            { hangul: "책", romaji: "Chaek", traducao: "Livro" },
-            { hangul: "집", romaji: "Jip", traducao: "Casa" },
-            { hangul: "시간", romaji: "Sigan", traducao: "Tempo / Hora" },
-            { hangul: "마음", romaji: "Maeum", traducao: "Coração / Mente / Sentimento" },
-            { hangul: "생각", romaji: "Saenggak", traducao: "Pensamento / Ideia" },
-            { hangul: "길", romaji: "Gil", traducao: "Caminho / Rua" }
+            { hangul: "사람", romaji: "Saram", jamo: "ㅅ + ㅏ + ㄹ  |  ㅁ", traducao: "Pessoa" },
+            { hangul: "나무", romaji: "Namu", jamo: "ㄴ + ㅏ  |  ㅁ + ㅜ", traducao: "Árvore" },
+            { hangul: "물", romaji: "Mul", jamo: "ㅁ + ㅜ  |  ㄹ", traducao: "Água" },
+            { hangul: "불", romaji: "Bul", jamo: "ㅂ + ㅜ  |  ㄹ", traducao: "Fogo" },
+            { hangul: "책", romaji: "Chaek", jamo: "ㅊ + ㅐ  |  ㄱ", traducao: "Livro" },
+            { hangul: "집", romaji: "Jip", jamo: "ㅈ + ㅣ  |  ㅂ", traducao: "Casa" },
+            { hangul: "시간", romaji: "Sigan", jamo: "ㅅ + ㅣ  |  ㄱ + ㅏ + ㄴ", traducao: "Tempo / Hora" },
+            { hangul: "마음", romaji: "Maeum", jamo: "ㅁ + ㅏ  |  ㅇ + ㅡ + ㅁ", traducao: "Coração / Mente" },
+            { hangul: "생각", romaji: "Saenggak", jamo: "ㅅ + ㅐ + ㅇ  |  ㄱ + ㅏ + ㄱ", traducao: "Pensamento / Ideia" },
+            { hangul: "길", romaji: "Gil", jamo: "ㄱ + ㅣ  |  ㄹ", traducao: "Caminho / Rua" }
         ];
 
-        var tempoEmSegundos = 40; // Tempo de troca na parede
+        var tempoEmSegundos = 30; // Tempo de troca na parede
 
         function mostrarProximoCard() {
             var index = Math.floor(Math.random() * cards.length);
@@ -102,6 +114,7 @@
 
             document.getElementById("termo-hangul").innerText = item.hangul;
             document.getElementById("termo-romaji").innerText = item.romaji;
+            document.getElementById("termo-jamo").innerText = item.jamo;
             document.getElementById("traducao").innerText = item.traducao;
         }
 
