@@ -26,8 +26,8 @@
             border-radius: 24px;
             padding: 40px 30px;
             width: 100%;
-            max-width: 600px; /* Largura otimizada para retrato / tela vertical */
-            min-height: 650px; /* Altura generosa para preencher bem a vertical */
+            max-width: 600px;
+            min-height: 650px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -61,15 +61,15 @@
             letter-spacing: 1px;
         }
         .jamo {
-            font-size: 1.4rem;
-            color: #A0AEC0;
+            font-size: 1.3rem;
+            color: #718096;
             font-weight: 500;
             margin-bottom: 35px;
             background-color: #F8FAFC;
             border: 1px dashed #CBD5E0;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         .traducao {
             font-size: 2.4rem;
@@ -87,23 +87,23 @@
         <div class="idioma-tag" id="tag-categoria">Coreano • Bloco 1</div>
         <div class="hangul" id="termo-hangul">사람</div>
         <div class="romanizacao" id="termo-romaji">Saram</div>
-        <div class="jamo" id="termo-jamo">ㅅ + ㅏ + ㄹ  |  ㅁ</div>
+        <div class="jamo" id="termo-jamo">ㅅ (s) + ㅏ (a) + ㄹ (r) | ㅁ (m)</div>
         <div class="traducao" id="traducao">Pessoa</div>
     </div>
 
     <script>
-        // SEUS CARDS DA SEMANA: Hangul, Romanização, Jamo e Tradução
+        // SEUS CARDS DA SEMANA: Hangul, Romanização, Jamo detalhado e Tradução
         var cards = [
-            { hangul: "사람", romaji: "Saram", jamo: "ㅅ + ㅏ + ㄹ  |  ㅁ", traducao: "Pessoa" },
-            { hangul: "나무", romaji: "Namu", jamo: "ㄴ + ㅏ  |  ㅁ + ㅜ", traducao: "Árvore" },
-            { hangul: "물", romaji: "Mul", jamo: "ㅁ + ㅜ  |  ㄹ", traducao: "Água" },
-            { hangul: "불", romaji: "Bul", jamo: "ㅂ + ㅜ  |  ㄹ", traducao: "Fogo" },
-            { hangul: "책", romaji: "Chaek", jamo: "ㅊ + ㅐ  |  ㄱ", traducao: "Livro" },
-            { hangul: "집", romaji: "Jip", jamo: "ㅈ + ㅣ  |  ㅂ", traducao: "Casa" },
-            { hangul: "시간", romaji: "Sigan", jamo: "ㅅ + ㅣ  |  ㄱ + ㅏ + ㄴ", traducao: "Tempo / Hora" },
-            { hangul: "마음", romaji: "Maeum", jamo: "ㅁ + ㅏ  |  ㅇ + ㅡ + ㅁ", traducao: "Coração / Mente" },
-            { hangul: "생각", romaji: "Saenggak", jamo: "ㅅ + ㅐ + ㅇ  |  ㄱ + ㅏ + ㄱ", traducao: "Pensamento / Ideia" },
-            { hangul: "길", romaji: "Gil", jamo: "ㄱ + ㅣ  |  ㄹ", traducao: "Caminho / Rua" }
+            { hangul: "사람", romaji: "Saram", jamo: "ㅅ (s) + ㅏ (a) + ㄹ (r)  |  ㅁ (m)", traducao: "Pessoa" },
+            { hangul: "나무", romaji: "Namu", jamo: "ㄴ (n) + ㅏ (a)  |  ㅁ (m) + ㅜ (u)", traducao: "Árvore" },
+            { hangul: "물", romaji: "Mul", jamo: "ㅁ (m) + ㅜ (u)  |  ㄹ (l)", traducao: "Água" },
+            { hangul: "불", romaji: "Bul", jamo: "ㅂ (b) + ㅜ (u)  |  ㄹ (l)", traducao: "Fogo" },
+            { hangul: "책", romaji: "Chaek", jamo: "ㅊ (ch) + ㅐ (ae)  |  ㄱ (k)", traducao: "Livro" },
+            { hangul: "집", romaji: "Jip", jamo: "ㅈ (j) + ㅣ (i)  |  ㅂ (p)", traducao: "Casa" },
+            { hangul: "시간", romaji: "Sigan", jamo: "ㅅ (s) + ㅣ (i)  |  ㄱ (g) + ㅏ (a) + ㄴ (n)", traducao: "Tempo / Hora" },
+            { hangul: "마음", romaji: "Maeum", jamo: "ㅁ (m) + ㅏ (a)  |  ㅇ (-) + ㅡ (eu) + ㅁ (m)", traducao: "Coração / Mente" },
+            { hangul: "생각", romaji: "Saenggak", jamo: "ㅅ (s) + ㅐ (ae) + ㅇ (ng)  |  ㄱ (g) + ㅏ (a) + ㄱ (k)", traducao: "Pensamento / Ideia" },
+            { hangul: "길", romaji: "Gil", jamo: "ㄱ (g) + ㅣ (i)  |  ㄹ (l)", traducao: "Caminho / Rua" }
         ];
 
         var tempoEmSegundos = 30; // Tempo de troca na parede
