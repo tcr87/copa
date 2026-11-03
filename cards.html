@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coreano • Vocabulário e Hangul</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F7F9FA;
+            color: #1A1A1A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 40px;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #E1E8ED;
+            border-radius: 24px;
+            padding: 60px 40px;
+            width: 100%;
+            max-width: 950px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+        }
+        .idioma-tag {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4A5568;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            background-color: #EDF2F7;
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .hangul {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #1A202C;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .romanizacao {
+            font-size: 2rem;
+            color: #718096;
+            font-weight: 500;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .traducao {
+            font-size: 2.2rem;
+            color: #2B6CB0;
+            font-weight: 600;
+            border-top: 2px solid #E2E8F0;
+            padding-top: 25px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="idioma-tag" id="tag-categoria">Coreano • Bloco 1</div>
+        <div class="hangul" id="termo-hangul">안녕하세요</div>
+        <div class="romanizacao" id="termo-romaji">An-nyeong-ha-se-yo</div>
+        <div class="traducao" id="traducao">Olá / Bom dia</div>
+    </div>
+
+    <script>
+        // SEUS CARDS DA SEMANA: Hangul, Romanização e Tradução
+        var cards = [
+            { hangul: "사람", romaji: "Saram", traducao: "Pessoa" },
+            { hangul: "나무", romaji: "Namu", traducao: "Árvore" },
+            { hangul: "물", romaji: "Mul", traducao: "Água" },
+            { hangul: "불", romaji: "Bul", traducao: "Fogo" },
+            { hangul: "책", romaji: "Chaek", traducao: "Livro" },
+            { hangul: "집", romaji: "Jip", traducao: "Casa" },
+            { hangul: "시간", romaji: "Sigan", traducao: "Tempo / Hora" },
+            { hangul: "마음", romaji: "Maeum", traducao: "Coração / Mente / Sentimento" },
+            { hangul: "생각", romaji: "Saenggak", traducao: "Pensamento / Ideia" },
+            { hangul: "길", romaji: "Gil", traducao: "Caminho / Rua" }
+        ];
+
+        var tempoEmSegundos = 40; // Tempo de troca na parede
+
+        function mostrarProximoCard() {
+            var index = Math.floor(Math.random() * cards.length);
+            var item = cards[index];
+
+            document.getElementById("termo-hangul").innerText = item.hangul;
+            document.getElementById("termo-romaji").innerText = item.romaji;
+            document.getElementById("traducao").innerText = item.traducao;
+        }
+
+        mostrarProximoCard();
+        setInterval(mostrarProximoCard, tempoEmSegundos * 1000);
+    </script>
+
+</body>
+</html>
